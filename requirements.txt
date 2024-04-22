@@ -1,3 +1,5 @@
+os
 flask
 keras
+werkzeug
 tensorflow
