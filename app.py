@@ -10,9 +10,21 @@ from werkzeug.utils import secure_filename
 
 # Define a flask app
 app = Flask(__name__)
+# Example of dynamic path construction
+directory_name = "models"
+file_name = "modelres50.h5"
 
+# Constructing a path dynamically
+dynamic_path = os.path.join(directory_name, file_name)
+
+# Getting the absolute path
+absolute_path = os.path.abspath(dynamic_path)
+
+print("Dynamic path:", dynamic_path)
+print("Absolute path:", absolute_path)
+mode = absolute_path
 # Model saved with Keras model.save()
-mode = 'D:\Web app using flask brain Tumour detection\Brain Tumour app (Flask)\models\modelres50.h5'
+# mode = 'D:\Web app using flask brain Tumour detection\Brain Tumour app (Flask)\models\modelres50.h5'
 
 
 model = load_model(mode)
